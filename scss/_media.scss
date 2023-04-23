@@ -1,0 +1,258 @@
+@media screen and (max-width: 1000px) {
+  .box-white-75 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  header {
+    color: $white;
+    background: $queen-blue;
+    background: linear-gradient(45deg, $queen-blue 0%, #0097b4 100%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col {
+    &-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-4 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  #projects {
+    .projects-inner {
+      .projects-columns {
+        columns: 2;
+      }
+    }
+  }
+
+  footer {
+    .footer-inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    .nav-inner {
+      .hamburger {
+        &-dark {
+          display: flex;
+          align-items: center;
+          color: $queen-blue;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+        &-light {
+          display: flex;
+          align-items: center;
+          color: $white;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+      .mobile-links {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .close {
+          cursor: pointer;
+          position: absolute;
+          top: 40px;
+          right: 40px;
+          color: $queen-blue;
+        }
+
+        ul {
+          li {
+            text-align: center;
+            margin: 0.5rem 0;
+            a {
+              color: $queen-blue;
+              text-transform: uppercase;
+              font-size: 1.35rem;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+
+      .links {
+        display: none;
+      }
+    }
+  }
+
+  #advantages {
+    .advantages-inner {
+      grid-template-columns: 1fr;
+      .advantage-img {
+        order: 1;
+        max-width: 75%;
+        margin: auto;
+      }
+
+      .advantages-text {
+        order: 2;
+      }
+    }
+  }
+
+  #about {
+    .about-inner {
+      img {
+        order: 1;
+      }
+
+      .about-text {
+        order: 2;
+      }
+    }
+  }
+
+  #contact {
+    .contact-box {
+      grid-template-columns: 1fr;
+
+      .contact-informations {
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  }
+
+  .col {
+    &-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .box-white-75 {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+
+  header {
+    #hero {
+      height: auto;
+
+      .header-inner {
+        padding: 2rem;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+        .header-text {
+          order: 2;
+          padding-bottom: 3rem;
+        }
+
+        .header-image {
+          order: 1;
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .col {
+    &-3 {
+      grid-template-columns: 1fr;
+    }
+
+    &-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #projects {
+    .projects-inner {
+      .projects-columns {
+        columns: 1;
+      }
+    }
+  }
+
+  #advantages {
+    .advantages-inner {
+      .advantages-text {
+        text-align: center;
+        .advantage {
+          padding: 1rem 0;
+          flex-direction: column;
+          .advantages-icon {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer-inner {
+      grid-template-columns: 1fr;
+
+      .footer-right {
+        order: 2;
+      }
+
+      .footer-middle {
+        order: 3;
+      }
+    }
+  }
+
+  .input {
+    grid-template-columns: 1fr;
+
+    &-message {
+      height: 10rem;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .col {
+    &-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #advantages {
+    .advantages-inner {
+      .advantage-img {
+        max-width: 100%;
+      }
+    }
+  }
+}

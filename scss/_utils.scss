@@ -1,0 +1,275 @@
+.container {
+  max-width: 1280px;
+  padding: 0 1.5rem;
+  margin: auto;
+}
+
+.heading {
+  &-lg {
+    font-size: 2.5rem;
+  }
+  &-m {
+    font-size: 2rem;
+
+    &-thin {
+      @extend .heading-m;
+      font-weight: 300;
+    }
+  }
+  &-s {
+    font-size: 1.65rem;
+  }
+  &-xs {
+    font-size: 1.4rem;
+  }
+}
+
+.lead {
+  font-size: 1.25rem;
+
+  &-s {
+    font-size: 1.15rem;
+  }
+}
+
+.col {
+  &-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+
+  &-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  &-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.p {
+  &y {
+    &-05 {
+      padding: 0.5rem 0;
+    }
+    &-1 {
+      padding: 1rem 0;
+    }
+    &-2 {
+      padding: 2rem 0;
+    }
+    &-3 {
+      padding: 3rem 0;
+    }
+  }
+
+  &t {
+    &-05 {
+      padding-top: 0.5rem;
+    }
+    &-1 {
+      padding-top: 1rem;
+    }
+  }
+
+  &b {
+    &-1 {
+      padding-bottom: 1rem;
+    }
+    &-2 {
+      padding-bottom: 2rem;
+    }
+  }
+
+  &r {
+    &-075 {
+      padding-right: 0.75rem;
+    }
+  }
+}
+
+.btn {
+  &-orange {
+    background: $chinese-yellow;
+    color: $white;
+    border: 0;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    &-transparent {
+      @extend .btn-orange;
+      background: transparent;
+      border: 2px solid $chinese-yellow;
+      color: $chinese-yellow;
+      margin-bottom: 2rem;
+      transition: 0.5s all;
+
+      &:hover {
+        background: $chinese-yellow;
+        color: $white;
+      }
+    }
+  }
+
+  &-submit {
+    background: transparent;
+    color: $queen-blue;
+    border: 2px solid #e5f0ff;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: 0.5s all;
+    width: fit-content;
+
+    &:hover {
+      background: $queen-blue;
+      color: $white;
+    }
+  }
+}
+
+.icon {
+  width: 3.5rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.centered {
+  text-align: center;
+}
+
+.box {
+  border-radius: 5px;
+  box-shadow: 0 8px 20px 0 #e5f0ff;
+  padding: 2rem;
+
+  &-white {
+    @extend .box;
+    transition: all 0.5s;
+    background: #fff;
+    color: $queen-blue;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &-75 {
+      @extend .box;
+      background: #fff;
+      color: $queen-blue;
+      width: 75%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  &-orange-gradient {
+    @extend .box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $queen-blue;
+    transition: all 0.5s;
+    position: relative;
+    background: #fff;
+    height: 100%;
+    z-index: 1;
+
+    svg {
+      fill: $queen-blue;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 5px;
+      background: rgb(246, 174, 45);
+      background: linear-gradient(
+        45deg,
+        rgba(246, 174, 45, 1) 0%,
+        rgba(255, 176, 93, 1) 25%,
+        rgba(255, 181, 138, 1) 75%,
+        rgba(255, 193, 181, 1) 100%
+      );
+      z-index: -1;
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+      svg {
+        fill: $white;
+      }
+      color: $white;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.input {
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+
+  &:nth-last-child(2) {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &-form {
+    border-radius: 8px;
+    border: 2px solid #e5f0ff;
+    padding: 1rem 1rem;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    transition: 0.5s;
+    outline: none;
+    padding: 1rem;
+
+    &:focus {
+      border: 2px solid $queen-blue;
+    }
+  }
+
+  &-message {
+    border-radius: 8px;
+    border: 2px solid #e5f0ff;
+    padding: 1rem 1rem;
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    transition: 0.5s;
+    outline: none;
+    padding: 1rem;
+    resize: none;
+
+    &:focus {
+      border: 2px solid $queen-blue;
+    }
+  }
+}
